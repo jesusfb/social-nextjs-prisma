@@ -7,6 +7,7 @@ import { login } from './actions';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from "@/components/ui/input";
 import PasswordInput from '@/components/PasswordInput';
+import LoadingButton from '@/components/LoadingButton';
 
 const LoginForm = () => {
     const [error, setError] = useState<string>();
@@ -57,6 +58,9 @@ const LoginForm = () => {
                         </FormItem>
                     )}
                 />
+                <LoadingButton loading={isPending} type="submit" className="w-full">
+                    Log in
+                </LoadingButton>
             </form>
         </Form>
     )
